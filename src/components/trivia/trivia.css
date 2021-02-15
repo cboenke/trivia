@@ -36,16 +36,49 @@
   transform: rotateY(180deg);
 }
 
-.btn__Random {
+.btn__Random,
+.input__difficulty {
   border-radius: 10px;
   border: 1px solid #d6410a;
   background-color: #d6410a;
   color: white;
   padding: 10px;
   margin-bottom: 20px;
+  width: fit-content;
+}
+
+.input__difficulty::placeholder {
+  color: white;
+  font-size: smaller;
 }
 
 .card__answers {
   display: grid;
   grid-auto-flow: column;
+  padding-top: 2em;
+  padding-left: 1em;
+  padding-right: 1em;
+}
+
+.card__category {
+  background-color: #004242;
+  margin: 0;
+  padding: 20px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.card__difficulty {
+  padding-top: 3em;
+}
+
+.card__type,
+.card__difficulty {
+  margin: 0;
+}
+
+.card__question {
+  padding-top: 1em;
+  padding-left: 1em;
+  padding-right: 1em;
 }

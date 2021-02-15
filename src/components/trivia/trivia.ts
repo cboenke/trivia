@@ -35,7 +35,12 @@ export function createCard({
               }),
               createElement("h3", {
                 className: "card__question",
-                innerText: question,
+                innerHTML: question,
+              }),
+
+              createElement("p", {
+                className: "card__answers",
+                innerHTML: "Answer options: " + shuffledAnswers,
               }),
               createElement("p", {
                 className: "card__difficulty",
@@ -45,18 +50,14 @@ export function createCard({
                 className: "card__type",
                 innerText: "Question type: " + type,
               }),
-              createElement("p", {
-                className: "card__answers",
-                innerText: "Answer options: " + shuffledAnswers,
-              }),
             ],
           }),
           createElement("div", {
             className: "card__back",
             childs: [
               createElement("p", {
-                className: "card__correctanswers",
-                innerText: correct_answer,
+                className: "card__correctanswer",
+                innerHTML: correct_answer,
               }),
             ],
           }),

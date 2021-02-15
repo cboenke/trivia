@@ -45,3 +45,35 @@ RandomQuestion.loaders = [
     result: await getRandomQuestion(),
   }),
 ];
+
+export const RandomQuestionByDifficulty = (args, { loaded: { result } }) => {
+  const input = createElement("input", {
+    className: "input__difficulty",
+    placeholder: "easy, medium or hard?",
+    onkeyup: async () => {
+      if (
+        input.value === "easy" ||
+        input.value === "medium" ||
+        input.value === "hard"
+      ) {
+        const randomQuestion = await getRandomQuestion(input.value);
+        if (container.childNodes.length > 1) {
+          container.removeChild(container.lastChild);
+        }
+        container.append(createCard(randomQuestion));
+      }
+    },
+  });
+
+  const container = createElement("div", {
+    className: "container",
+    childs: [input, createCard(result)],
+  });
+  return container;
+};
+
+RandomQuestionByDifficulty.loaders = [
+  async () => ({
+    result: await getRandomQuestion(),
+  }),
+];
